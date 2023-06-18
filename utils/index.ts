@@ -1,3 +1,5 @@
+import { CardCarProps } from "@/types";
+
 export async function fetchCars() {
     const headers = {
 		'X-RapidAPI-Key': '394aa919e7msh70f1fa551c6c942p1e1ae5jsn56ca649175c5',
@@ -25,3 +27,19 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
 
   return rentalRatePerDay.toFixed(0);
 };
+
+
+export const generateCardImgUrl = (car: CardCarProps, angle?: string) => {
+  const url = new URL("https://cdn.imagin.studio/getimage")
+  const { make, year, model } = car
+  
+  url.searchParams.append('customer', "idordet")
+  url.searchParams.append('make', make)
+  url.searchParams.append('modelFamily', model.split(" ")[0])
+  url.searchParams.append('zoomType', "fullscreen")
+  url.searchParams.append('modelYear', `${year}`)
+  url.searchParams.append('angle', `${angle}`)
+
+
+  return`${url}`
+}

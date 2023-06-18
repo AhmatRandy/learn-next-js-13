@@ -91,7 +91,7 @@ const manufactur = ({ manufactur, setManufactur }: SearchManuFacturerProps) => {
                             className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
                               active
                                 ? "text-white"
-                                : "text-pribg-primary-purple"
+                                : "text-primary bg-primary-purple"
                             }`}
                           ></span>
                         ) : null}

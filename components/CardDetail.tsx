@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { Dialog, Transition } from "@headlessui/react";
 import { CardCarProps } from "@/types";
-// import { generateCarImageUrl } from "@utils";
+import { generateCardImgUrl } from "@/utils";
 
 interface CarDetailsProps {
   open: boolean;
@@ -54,10 +54,10 @@ const CarDetails = ({ open, closeModal, car }: CarDetailsProps) => (
                   />
                 </button>
 
-                {/* <div className="flex-1 flex flex-col gap-3">
+                <div className="flex-1 flex flex-col gap-3">
                   <div className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg">
                     <Image
-                      src={generateCarImageUrl(car)}
+                      src={generateCardImgUrl(car)}
                       alt="car model"
                       fill
                       priority
@@ -68,7 +68,7 @@ const CarDetails = ({ open, closeModal, car }: CarDetailsProps) => (
                   <div className="flex gap-3">
                     <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                       <Image
-                        src={generateCarImageUrl(car, "29")}
+                        src={generateCardImgUrl(car, "29")}
                         alt="car model"
                         fill
                         priority
@@ -77,7 +77,7 @@ const CarDetails = ({ open, closeModal, car }: CarDetailsProps) => (
                     </div>
                     <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                       <Image
-                        src={generateCarImageUrl(car, "33")}
+                        src={generateCardImgUrl(car, "33")}
                         alt="car model"
                         fill
                         priority
@@ -86,7 +86,7 @@ const CarDetails = ({ open, closeModal, car }: CarDetailsProps) => (
                     </div>
                     <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                       <Image
-                        src={generateCarImageUrl(car, "13")}
+                        src={generateCardImgUrl(car, "13")}
                         alt="car model"
                         fill
                         priority
@@ -114,7 +114,7 @@ const CarDetails = ({ open, closeModal, car }: CarDetailsProps) => (
                       </div>
                     ))}
                   </div>
-                </div> */}
+                </div>
               </Dialog.Panel>
             </Transition.Child>
           </div>
@@ -125,3 +125,9 @@ const CarDetails = ({ open, closeModal, car }: CarDetailsProps) => (
 );
 
 export default CarDetails;
+// function generateCarImageUrl(
+//   car: CardCarProps,
+//   arg1: string
+// ): string | (StaticRequire | import("next/image").StaticImageData) {
+//   throw new Error("Function not implemented.");
+// }

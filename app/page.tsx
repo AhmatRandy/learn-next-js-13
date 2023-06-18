@@ -4,7 +4,7 @@ import { CardCarProps } from "@/types";
 
 export default async function Home() {
   const allCars = await fetchCars();
-  console.log(allCars);
+
   const isEmptyCars = !allCars || allCars.length < 1;
   return (
     <main className="overflow-hidden">
@@ -23,7 +23,7 @@ export default async function Home() {
         </div>
         {!isEmptyCars ? (
           <section>
-            {allCars?.map((cars: CardCarProps) => (
+            {allCars.map((cars: CardCarProps) => (
               <Card car={cars} />
             ))}
           </section>

@@ -1,6 +1,6 @@
 "use client";
 import { CardCarProps } from "@/types";
-import { calculateCarRent } from "@/utils";
+import { calculateCarRent, generateCardImgUrl } from "@/utils";
 import Image from "next/image";
 import { CustomButton } from "./CustomButton";
 import { useState } from "react";
@@ -10,7 +10,7 @@ interface CarProps {
 }
 
 export const Card = ({ car }: CarProps) => {
-  const [open, setIsOpen] = useState<boolean>(true);
+  const [open, setIsOpen] = useState<boolean>(false);
 
   const { city_mpg, model, year, make, transmission, drive } = car;
   const carRent = calculateCarRent(city_mpg, year);
@@ -29,7 +29,7 @@ export const Card = ({ car }: CarProps) => {
       </p>
       <div className="relative w-full h-40 my-3 object-contain">
         <Image
-          src="/hero.png"
+          src={generateCardImgUrl(car, "angel")}
           alt="car model"
           fill
           priority
