@@ -4,7 +4,11 @@ export interface customButtonProps {
     title: string,
     className?: string,
     handleClick?: MouseEventHandler<HTMLButtonElement>,
-    buttonType?: "button" | "submit"
+  buttonType?: "button" | "submit"
+  textStyles?: string;
+  rightIcon?: string;
+  isDisabled?: boolean
+  containerStyles?: string
 }
 
 export interface CardCarProps {

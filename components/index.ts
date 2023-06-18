@@ -6,6 +6,7 @@ import SearchBar from "./SearchBar"
 import CustomFilter from "./CustomFilter"
 import SearchManufactur from "./SearchManufactur"
 import { Card } from "./Card"
+import CardDetail from "./CardDetail"
 export {
     Hero,
     CustomButton,
@@ -14,5 +15,6 @@ export {
     SearchBar,
     CustomFilter,
     SearchManufactur,
-    Card
+    Card,
+    CardDetail
 }
